@@ -77,7 +77,7 @@ def delete_todo(id):
 
 
 global database
-database = {0:"yeet", 1:"skeet"}
+database = [{"id":0,"content":"yeet"},{"id":1,"content":"nigga"}]
 
 
 def get_fakes():
