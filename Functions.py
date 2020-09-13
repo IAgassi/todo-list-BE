@@ -29,6 +29,19 @@ def get_cur(con):
 
 
 # todo: make all returns True or False, add actual response message in app.py
+def find_latest_id(cur=None):
+    # todo: test this thing actually works, or find actual solution in DB settings
+    query = """SELECT MAX(ID) from TODO"""
+    if cur:
+        try:
+            return cur.execute(query).fetchall()+1
+        except Exception as e:
+            print("Whoops, you suck")
+            return False
+    else:
+        print("damn you suck")
+        return False
+
 
 def get_all_todos():
     con = make_connection()
@@ -77,7 +90,7 @@ def delete_todo(id):
 
 
 global database
-database = [{"id":0,"content":"yeet"},{"id":1,"content":"nigga"}]
+database = [{"id": 0, "content": "yeet"}, {"id": 1, "content": "Damn Homie"}]
 
 
 def get_fakes():
